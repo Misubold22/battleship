@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-container">
+        <p class="game-title">BATTLESHIP</p>
+        <h4>Drag and drop:</h4>
+        <div class="row-flex">
+          <div class="dropZone">
+            <div class="five-elements" data-ship-length="5">
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+            </div>
+            <div class="four-elements" data-ship-length="4">
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+            </div>
+            <div
+              class="three-elements-b"
+              data-ship-length="3"
+              data-ship-id="3-b"
+            >
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+            </div>
+            <div class="three-elements" data-ship-length="3">
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+            </div>
+            <div class="two-elements" data-ship-length="2">
+              <div class="dragElement" draggable="true"></div>
+              <div class="dragElement" draggable="true"></div>
+            </div>
+          </div>
+          <div class="empty-board" id="drop-target"></div>
+          <div class="card">
+            <h4>Rules</h4>
+            <p>1. All ships must be at least 1 square apart.</p>
+            <p>2. You lose your turn when you miss.</p>
+            <p>3. You keep the turn when you hit a ship.</p>
+            <p>4. Whoever sinks all ships first - wins.</p>
+          </div>
+        </div>
+        <div class="direction-button-container">
+          <button class="button" data-action="horizontal">Horizontal</button>
+          <button class="button" data-action="vertical">Vertical</button>
+        </div>
+        <div class="button-container">
+          <button class="button" data-action="reset">Reset</button>
+          <button class="button" data-action="random">Random</button>
+          <button class="button" data-action="start">Start</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
