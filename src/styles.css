@@ -1,0 +1,465 @@
+/* styles.css */
+@font-face {
+  font-family: modern-tetris;
+  src: url("./fonts/modern-tetris.ttf");
+}
+body {
+  background-color: oklch(20.8% 0.042 265.755);
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+
+h3 {
+  margin-bottom: 12px;
+}
+.game-title {
+  align-content: center;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.3rem;
+  font-family: modern-tetris;
+  margin-top: -7rem;
+  padding-top: 0px;
+  margin-bottom: 7rem;
+  letter-spacing: 3px;
+}
+
+.row-flex {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.row-flex.card.button-container {
+  flex: 1;
+  box-sizing: border-box;
+  min-width: auto;
+  min-width: max-content;
+}
+
+.dragElement {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  transition: 0.3s;
+  border-radius: 4px;
+  margin: 16px 0;
+  width: 0.1rem;
+  padding: 19px;
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.05),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid oklch(37.2% 0.044 257.287);
+  background-color: oklch(55.4% 0.046 257.417);
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  z-index: 1000;
+
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.dropZone {
+  gap: 0px;
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  width: 16.3rem;
+  height: 17.8rem;
+  margin-top: 38px;
+  padding: 19px;
+  padding-top: 39px;
+  padding-bottom: 16px;
+  filter: drop-shadow(1px 2px 8px rgba(0, 0, 0, 0.1));
+  box-shadow:
+    2px 2px 4px rgba(117, 117, 117, 0.8),
+    -2px -2px 4px rgba(117, 117, 117, 0.8);
+  border: 2px solid oklch(70.4% 0.04 256.788);
+  border-radius: 4px;
+  margin-right: 1rem;
+
+  transition: ease-out 0.25s;
+}
+
+.dropZone-vertical {
+  gap: 0px;
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  gap: 15px;
+  width: 16.3rem;
+  height: 17.8rem;
+  margin-top: 38px;
+  padding: 19px;
+  padding-top: 39px;
+  padding-bottom: 16px;
+  filter: drop-shadow(1px 2px 8px rgba(0, 0, 0, 0.1));
+  box-shadow:
+    2px 2px 4px rgba(117, 117, 117, 0.8),
+    -2px -2px 4px rgba(117, 117, 117, 0.8);
+  border: 2px solid oklch(70.4% 0.04 256.788);
+  border-radius: 4px;
+  transition: ease-out 0.25s;
+}
+
+.two-elements,
+.three-elements,
+.three-elements-b,
+.four-elements,
+.five-elements {
+  grid-template-rows: repeat(2, 40px);
+  grid-template-columns: repeat(2, 40px);
+  width: 40px;
+  display: flex;
+  margin-top: -16px;
+  gap: 0px;
+  grid-auto-flow: column;
+  row-gap: 0px;
+  cursor: pointer;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.two-elements {
+  gap: 0px;
+}
+
+.verticalTwo {
+  margin-top: 8.1px;
+}
+
+.postverticalTwo {
+  padding-bottom: 8.1px;
+}
+.horizontalTwo,
+.horizontalThree,
+.horizontalThreeB,
+.horizontalFour,
+.horizontalFive {
+  padding-top: 17px;
+}
+.horizontalFive {
+  padding-right: 1px;
+}
+
+.three-elements,
+.three-elements-b {
+  grid-template-rows: repeat(3, 40px);
+  grid-template-columns: repeat(3, 40px);
+  gap: 0px;
+}
+
+.verticalThree,
+.verticalThreeB {
+  margin-top: 48.1px;
+}
+
+.four-elements {
+  grid-template-rows: repeat(4, 40px);
+  grid-template-columns: repeat(4, 40px);
+  padding-bottom: 0px;
+  gap: 0px;
+}
+.verticalFour {
+  margin-top: 88.1px;
+}
+
+.five-elements {
+  grid-template-rows: repeat(5, 40px);
+  grid-template-columns: repeat(5, 40px);
+  padding-bottom: 0px;
+  gap: 0px;
+}
+.verticalFive {
+  margin-top: 128.1px;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-family: modern-tetris;
+  font-weight: bolder;
+  color: white;
+  margin-top: -1rem;
+  padding-top: 0px;
+  letter-spacing: 2px;
+  width: 250px;
+  margin-bottom: -2rem;
+}
+.card {
+  border-radius: 4px;
+  text-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 20px;
+  min-height: 350px;
+  max-width: 250px;
+}
+
+.card h4 {
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 10px;
+  font-family: modern-tetris;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  letter-spacing: 1px;
+  padding-left: 0px;
+  margin-top: 1rem;
+}
+.button,
+.play-again {
+  background-color: oklch(41% 0.159 10.272);
+  border: none;
+  color: white;
+  padding: 9px 25px;
+  margin: 3px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 4px;
+  font-family: modern-tetris;
+}
+
+.play-again:hover {
+  border: solid 3px oklch(62.7% 0.154 150.069);
+  border-width: medium;
+  background-color: oklch(72.7% 0.154 150.069);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 20rem;
+}
+
+.button-container {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: -1rem;
+  margin-left: 1rem;
+  justify-content: center;
+  gap: 5px;
+}
+.button:hover {
+  background-color: #bb2d3b;
+}
+
+.button:active {
+  box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+}
+
+.direction-button-container {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: 0.8rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.player-board,
+.enemy-board,
+.empty-board {
+  display: grid;
+  grid-template-rows: repeat(10, 40px);
+  grid-template-columns: repeat(10, 40px);
+  background-color: oklch(39.8% 0.195 277.366);
+  grid-gap: 0px;
+
+  width: 400px;
+  border: 2px solid oklch(70.4% 0.04 256.788);
+  filter: drop-shadow(1px 2px 8px hsl(220deg 60% 50%));
+  box-shadow:
+    2px 2px 4px rgba(117, 117, 117, 0.8),
+    -2px -2px 4px rgba(117, 117, 117, 0.8);
+  position: relative;
+  overflow: clip;
+}
+
+.enemy-board :hover {
+  background-color: oklch(52.7% 0.154 150.069);
+}
+
+.enemy-board :hover:after {
+  bottom: -2.65em;
+  border-top-color: #5ae2ff;
+}
+
+.atack {
+  font-family: Cambria, Georgia, serif;
+  font-size: 15px;
+  transition: ease-out 0.25s;
+  user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.hit {
+  border-radius: 4px;
+  padding: 5px 3px;
+  border: 1px solid oklch(37.2% 0.044 257.287);
+  background-color: oklch(55.4% 0.046 257.417);
+  text-align: center;
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.05),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition-property: background-color, box-shadow;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: ease-out 0.25s;
+}
+
+.hit:after {
+  color: white;
+  content: "💥";
+  margin-left: 3px;
+  font-size: 21px;
+  pointer-events: none;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  border: 0.1px solid oklch(60.4% 0.04 256.788);
+  background: oklch(35.9% 0.144 278.697);
+  cursor: crosshair;
+  font-family: KGShadowOfTheNight;
+}
+
+.ship {
+  margin: 17px 0;
+  border-radius: 4px;
+  padding: 19px;
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.05),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid oklch(37.2% 0.044 257.287);
+  background-color: oklch(55.4% 0.046 257.417);
+  text-align: center;
+  cursor: pointer;
+  transition-property: background-color, box-shadow;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.atack:after {
+  content: "💣";
+  font-size: 20px;
+}
+
+#turns {
+  padding: 2rem;
+  background: oklch(52.7% 0.154 150.069);
+  color: white;
+  border: 3px solid oklch(62.7% 0.194 149.214);
+  box-shadow: 0 0 15px oklch(62.7% 0.194 149.214);
+  border-radius: 5px;
+  height: 1px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.turn {
+  text-align: right;
+  color: whitesmoke;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  text-align: center;
+
+  padding-bottom: 1rem;
+  padding-top: 10px;
+  font-family: modern-tetris;
+}
+
+.play-again {
+  background: oklch(52.7% 0.154 150.069);
+  color: white;
+  border: 3px solid oklch(62.7% 0.194 149.214);
+  box-shadow: 0 0 15px oklch(62.7% 0.194 149.214);
+  border-radius: 5px;
+  height: 70px;
+  width: 168px;
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  text-align: center;
+  display: none;
+  transition: ease-out 0.25s;
+}
+
+.login-container {
+  padding: 2rem;
+  background: skyblue;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.beingDragged {
+  opacity: 0.5;
+  color: white;
+  transition: 0.2s ease-out;
+  pointer-events: none;
+}
+
+.drag-over {
+  border: solid 3px oklch(52.7% 0.154 150.069);
+  border-width: medium;
+  transition: 0.2s ease-out;
+}
