@@ -1,8 +1,8 @@
-/* styles.css */
 @font-face {
   font-family: modern-tetris;
   src: url("./fonts/modern-tetris.ttf");
 }
+
 body {
   background-color: oklch(20.8% 0.042 265.755);
   height: 100vh;
@@ -12,6 +12,7 @@ body {
   overflow: hidden;
   box-sizing: border-box;
 }
+
 .container {
   display: grid;
   justify-items: center;
@@ -23,6 +24,7 @@ body {
 h3 {
   margin-bottom: 12px;
 }
+
 .game-title {
   align-content: center;
   color: #ddd;
@@ -45,6 +47,7 @@ h3 {
   justify-content: center;
   gap: 5rem;
 }
+
 .row-flex.card.button-container {
   flex: 1;
   box-sizing: border-box;
@@ -151,6 +154,7 @@ h3 {
 .postverticalTwo {
   padding-bottom: 8.1px;
 }
+
 .horizontalTwo,
 .horizontalThree,
 .horizontalThreeB,
@@ -158,6 +162,12 @@ h3 {
 .horizontalFive {
   padding-top: 17px;
 }
+
+.horizontalThree,
+.horizontalThreeB {
+  padding-left: 0.5px;
+}
+
 .horizontalFive {
   padding-right: 1px;
 }
@@ -180,6 +190,7 @@ h3 {
   padding-bottom: 0px;
   gap: 0px;
 }
+
 .verticalFour {
   margin-top: 88.1px;
 }
@@ -190,6 +201,7 @@ h3 {
   padding-bottom: 0px;
   gap: 0px;
 }
+
 .verticalFive {
   margin-top: 128.1px;
 }
@@ -205,6 +217,7 @@ h4 {
   width: 250px;
   margin-bottom: -2rem;
 }
+
 .card {
   border-radius: 4px;
   text-wrap: wrap;
@@ -228,6 +241,7 @@ h4 {
   padding-left: 0px;
   margin-top: 1rem;
 }
+
 .button,
 .play-again {
   background-color: oklch(41% 0.159 10.272);
@@ -462,4 +476,16 @@ h4 {
   border: solid 3px oklch(52.7% 0.154 150.069);
   border-width: medium;
   transition: 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .body,
+  .container,
+  .row-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
 }
